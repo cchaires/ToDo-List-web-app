@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="task-container">
+      <% task.forEach((task, index) => { %>
+      <div class="task-item">
+        <input type="checkbox" id="task<%= index %>" class="task-checkbox" />
+        <label for="task<%= index %>" class="<%= task.completed ? 'completed' : '' %>"><%= task.description %></label>
+      </div>
+      <% }) %>
+      <form id="add-form" action="/add" method="POST">
+        <button class="add-button" type="button"> + </button>
+      </form>
+    </div>
+  </div>
+  
+  <script src="/client.js"></script> <!-- Include the client-side JavaScript file -->
+
+
+</html>
